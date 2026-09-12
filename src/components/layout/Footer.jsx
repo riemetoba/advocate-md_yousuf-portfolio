@@ -6,8 +6,9 @@ const navLinks = [
   { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
   { label: 'Practice Areas', href: '#services' },
-  // { label: 'Credentials', href: '#credentials' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'How I Work', href: '#process' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '#contact' }
 ];
 
 const socialLinks = [

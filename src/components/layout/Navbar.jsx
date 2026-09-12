@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Practice Areas', href: '#services' },
   { label: 'How I Work', href: '#process' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '#contact' }
 ];
 
 const Navbar = () => {
