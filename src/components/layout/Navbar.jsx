@@ -8,7 +8,8 @@ const navLinks = [
   { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
   { label: 'Practice Areas', href: '#services' },
-  { label: 'Credentials', href: '#credentials' },
+  { label: 'How I Work', href: '#process' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -16,7 +17,6 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // স্ক্রল স্টেট ট্র্যাকিং
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll);
@@ -62,7 +62,6 @@ const Navbar = () => {
             </button>
           ))}
           
-          {/* কাস্টম Button কম্পোনেন্ট */}
           <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}>
             <Button 
               btnText="Book Consultation"
@@ -71,7 +70,6 @@ const Navbar = () => {
           </a>
         </nav>
 
-        {/* মোবাইল মেনু টগল বাটন */}
         <button
           className="md:hidden text-slate"
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -81,7 +79,6 @@ const Navbar = () => {
         </button>
       </Container>
 
-      {/* মোবাইল মেনু ড্রপডাউন */}
       <AnimatePresence>
         {menuOpen && (
           <motion.nav

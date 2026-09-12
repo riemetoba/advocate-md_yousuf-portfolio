@@ -5,9 +5,9 @@ import Container from '../Container';
 const navLinks = [
   { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
-  // { label: 'Practice Areas', href: '#services' },
+  { label: 'Practice Areas', href: '#services' },
   // { label: 'Credentials', href: '#credentials' },
-  // { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 const socialLinks = [
