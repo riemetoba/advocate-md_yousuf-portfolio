@@ -1,7 +1,9 @@
-const Button = ({ btnText, className }) => {
+const Button = ({ btnText, className, type = 'button', disabled, ...props }) => {
   return (
-    <button className={`${className}`}>{btnText}</button>
-  )
-}
+    <button type={type} disabled={disabled} className={`${className}`} {...props}>
+      {btnText}
+    </button>
+  );
+};
 
-export default Button
+export default Button;
