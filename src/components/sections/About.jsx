@@ -25,7 +25,7 @@ const About = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="relative"
         >
-          <div className="aspect-4/5 w-full max-w-sm rounded-2xl overflow-hidden border border-navy/10">
+          <div className="aspect-[4/5] w-full max-w-sm rounded-2xl overflow-hidden border border-navy/10">
             <Image
               imgSrc={mdYusufAbout}
               alt="Advocate Md. Yusuf Hossain at his law office in Bangladesh"
@@ -33,7 +33,7 @@ const About = () => {
             />
           </div>
           <div className="absolute -bottom-6 -right-6 bg-navy text-slate rounded-xl px-6 py-4 flex items-center gap-3 shadow-lg">
-            <Scale size={20} className="text-gold" />
+            <Scale size={20} className="text-gold" aria-hidden="true" />
             <span className="text-sm">Bangladesh Bar Council</span>
           </div>
         </motion.div>
