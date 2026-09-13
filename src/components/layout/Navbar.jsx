@@ -19,13 +19,17 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (href) => {
+  const handleNavClick = (e, href) => {
+    if (e) e.preventDefault();
     setMenuOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -40,42 +44,43 @@ const Navbar = () => {
       }`}
     >
       <Container className="px-6 flex items-center justify-between">
-        
         <a 
           href="#hero" 
-          onClick={(e) => { e.preventDefault(); handleNavClick('#hero'); }} 
+          onClick={(e) => handleNavClick(e, '#hero')} 
           className="flex items-center gap-2 text-slate"
+          aria-label="Home"
         >
-          <Scale size={22} className="text-gold" />
+          <Scale size={22} className="text-gold" aria-hidden="true" />
           <span className="text-lg tracking-tight font-serif">MD. YOUSUF HOSSAIN</span>
         </a>
 
-        {/* ডেস্কটপ মেনু */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
           {navLinks.map((link) => (
-            <button
+            <a
               key={link.href}
-              onClick={() => handleNavClick(link.href)}
-              className="text-sm text-slate/80 hover:text-gold transition-colors cursor-pointer"
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-sm text-slate/80 hover:text-gold transition-colors"
             >
               {link.label}
-            </button>
+            </a>
           ))}
           
-          <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}>
-            <Button 
-              btnText="Book Consultation"
-              className="text-sm border border-gold text-gold px-5 py-2 rounded-full hover:bg-gold hover:text-navy transition-colors cursor-pointer"
-            />
-          </a>
+          <Button 
+            btnText="Book Consultation"
+            onClick={(e) => handleNavClick(e, '#contact')}
+            className="text-sm border border-gold text-gold px-5 py-2 rounded-full hover:bg-gold hover:text-navy transition-colors cursor-pointer"
+            aria-label="Book Consultation"
+          />
         </nav>
 
         <button
-          className="md:hidden text-slate"
+          className="md:hidden text-slate p-1 cursor-pointer"
           onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-label="Toggle navigation menu"
         >
-          {menuOpen ? <X size={26} /> : <Menu size={26} />}
+          {menuOpen ? <X size={26} aria-hidden="true" /> : <Menu size={26} aria-hidden="true" />}
         </button>
       </Container>
 
@@ -87,23 +92,25 @@ const Navbar = () => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden overflow-hidden bg-navy/95 backdrop-blur-md border-t border-gold/20"
+            aria-label="Mobile Navigation"
           >
             <div className="flex flex-col px-6 py-4 gap-4">
               {navLinks.map((link) => (
-                <button
+                <a
                   key={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-left text-slate/90 text-sm py-2"
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="text-left text-slate/90 text-sm py-2 hover:text-gold transition-colors block"
                 >
                   {link.label}
-                </button>
+                </a>
               ))}
-              <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }} className="mt-2">
-                <Button 
-                  btnText="Book Consultation"
-                  className="w-full text-sm border border-gold text-gold px-5 py-2 rounded-full text-center hover:bg-gold hover:text-navy transition-colors cursor-pointer"
-                />
-              </a>
+              <Button 
+                btnText="Book Consultation"
+                onClick={(e) => handleNavClick(e, '#contact')}
+                className="mt-2 w-full text-sm border border-gold text-gold px-5 py-3 rounded-full text-center hover:bg-gold hover:text-navy transition-colors cursor-pointer"
+                aria-label="Book Consultation"
+              />
             </div>
           </motion.nav>
         )}

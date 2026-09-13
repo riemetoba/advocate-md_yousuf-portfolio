@@ -29,8 +29,26 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  };
+
   return (
     <section id="faq" className="bg-navy py-24 px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       <Container className="px-6 max-w-3xl">
         <div className="mb-16">
           <p className="text-gold text-sm mb-3">FAQ</p>
@@ -42,6 +60,9 @@ const FAQ = () => {
         <div className="flex flex-col gap-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
+            const questionId = `faq-question-${index}`;
+            const answerId = `faq-answer-${index}`;
+
             return (
               <motion.div
                 key={faq.question}
@@ -53,16 +74,19 @@ const FAQ = () => {
               >
                 <button
                   onClick={() => toggle(index)}
-                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer"
+                  aria-expanded={isOpen}
+                  aria-controls={answerId}
+                  id={questionId}
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50"
                 >
                   <span className="text-slate text-sm md:text-base font-medium">
                     {faq.question}
                   </span>
                   <span className="shrink-0 w-7 h-7 rounded-full bg-gold/10 flex items-center justify-center">
                     {isOpen ? (
-                      <Minus size={14} className="text-gold" />
+                      <Minus size={14} className="text-gold" aria-hidden="true" />
                     ) : (
-                      <Plus size={14} className="text-gold" />
+                      <Plus size={14} className="text-gold" aria-hidden="true" />
                     )}
                   </span>
                 </button>
@@ -70,6 +94,9 @@ const FAQ = () => {
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div
+                      id={answerId}
+                      role="region"
+                      aria-labelledby={questionId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
