@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-offwhite py-24 px-6">
+    <section id="contact" className="bg-offwhite py-24 px-6" aria-labelledby="contact-heading">
       <Container className="px-6 grid md:grid-cols-2 gap-16">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -42,7 +42,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <p className="text-gold text-sm mb-3">Contact</p>
-          <h2 className="text-3xl md:text-4xl font-serif text-charcoal mb-6">
+          <h2 id="contact-heading" className="text-3xl md:text-4xl font-serif text-charcoal mb-6">
             Book a consultation
           </h2>
           <p className="text-charcoal/60 leading-relaxed mb-10 max-w-sm">
@@ -50,26 +50,26 @@ const Contact = () => {
             within one business day.
           </p>
 
-          <div className="flex flex-col gap-5">
+          <address className="flex flex-col gap-5 not-italic">
             <div className="flex items-center gap-3">
-              <MapPin size={18} className="text-gold shrink-0" />
+              <MapPin size={18} className="text-gold shrink-0" aria-hidden="true" />
               <span className="text-charcoal/70 text-sm">
                 Chamber No. 12, Bar Council Building, Dhaka
               </span>
             </div>
             <div className="flex items-center gap-3">
-              <Phone size={18} className="text-gold shrink-0" />
-              <a href="tel:+8801XXXXXXXXX" className="text-charcoal/70 text-sm hover:text-gold transition-colors">
+              <Phone size={18} className="text-gold shrink-0" aria-hidden="true" />
+              <a href="tel:+8801XXXXXXXXX" className="text-charcoal/70 text-sm hover:text-gold transition-colors" aria-label="Call +880 1XXX-XXXXXX">
                 +880 1XXX-XXXXXX
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <Mail size={18} className="text-gold shrink-0" />
-              <a href="mailto:contact@yusufhossain.com" className="text-charcoal/70 text-sm hover:text-gold transition-colors">
+              <Mail size={18} className="text-gold shrink-0" aria-hidden="true" />
+              <a href="mailto:contact@yusufhossain.com" className="text-charcoal/70 text-sm hover:text-gold transition-colors" aria-label="Email contact@yusufhossain.com">
                 contact@yusufhossain.com
               </a>
             </div>
-          </div>
+          </address>
         </motion.div>
 
         <motion.form
@@ -79,32 +79,38 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="bg-white border border-navy/10 rounded-2xl p-8 flex flex-col gap-5"
+          aria-label="Contact Form"
         >
           <div>
-            <label className="text-sm text-charcoal/70 mb-1.5 block">Name</label>
+            <label htmlFor="name" className="text-sm text-charcoal/70 mb-1.5 block">Name</label>
             <input
+              id="name"
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
+              autoComplete="name"
               className="w-full border border-navy/15 rounded-lg px-4 py-2.5 text-sm text-charcoal focus:outline-none focus:border-gold"
             />
           </div>
           <div>
-            <label className="text-sm text-charcoal/70 mb-1.5 block">Email</label>
+            <label htmlFor="email" className="text-sm text-charcoal/70 mb-1.5 block">Email</label>
             <input
+              id="email"
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
+              autoComplete="email"
               className="w-full border border-navy/15 rounded-lg px-4 py-2.5 text-sm text-charcoal focus:outline-none focus:border-gold"
             />
           </div>
           <div>
-            <label className="text-sm text-charcoal/70 mb-1.5 block">Message</label>
+            <label htmlFor="message" className="text-sm text-charcoal/70 mb-1.5 block">Message</label>
             <textarea
+              id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
@@ -121,12 +127,14 @@ const Contact = () => {
             className="bg-navy text-slate px-6 py-3 rounded-full text-sm font-medium hover:bg-navy/90 transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
           />
 
-          {status === 'success' && (
-            <p className="text-sm text-green-600">Message sent successfully.</p>
-          )}
-          {status === 'error' && (
-            <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
-          )}
+          <div aria-live="polite" aria-atomic="true">
+            {status === 'success' && (
+              <p className="text-sm text-green-600">Message sent successfully.</p>
+            )}
+            {status === 'error' && (
+              <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
+            )}
+          </div>
         </motion.form>
       </Container>
     </section>
