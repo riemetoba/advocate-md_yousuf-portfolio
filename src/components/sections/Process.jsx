@@ -31,20 +31,20 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="bg-offwhite py-24 px-6">
+    <section id="process" aria-labelledby="process-heading" className="bg-offwhite py-24 px-6">
       <Container className="px-6">
         <div className="max-w-xl mb-16">
           <p className="text-gold text-sm mb-3">How I Work</p>
-          <h2 className="text-3xl md:text-4xl font-serif text-charcoal">
+          <h2 id="process-heading" className="text-3xl md:text-4xl font-serif text-charcoal">
             What to expect, step by step
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((item, index) => {
             const Icon = item.icon;
             return (
-              <motion.div
+              <motion.li
                 key={item.step}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -64,10 +64,10 @@ const Process = () => {
                 <p className="text-sm text-charcoal/60 leading-relaxed">
                   {item.desc}
                 </p>
-              </motion.div>
+              </motion.li>
             );
           })}
-        </div>
+        </ol>
       </Container>
     </section>
   );
