@@ -47,10 +47,10 @@ const PracticeAreas = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -6 }}
-                className="group bg-white/3 border border-slate/10 rounded-xl p-7 transition-colors hover:border-gold/40"
+                className="group bg-white/5 border border-slate/10 rounded-xl p-7 transition-colors hover:border-gold/40"
               >
                 <div className="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
-                  <Icon size={20} className="text-gold" />
+                  <Icon size={20} className="text-gold" aria-hidden="true" />
                 </div>
                 <h3 className="text-lg font-medium text-slate mb-2">
                   {area.title}
