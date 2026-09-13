@@ -1,5 +1,5 @@
 import { Scale, MapPin, Phone, Mail } from 'lucide-react';
-import { FaFacebook, FaLinkedin  } from "react-icons/fa";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import Container from '../Container';
 
 const navLinks = [
@@ -18,12 +18,15 @@ const socialLinks = [
 
 const Footer = () => {
   const handleNavClick = (e, href) => {
-    e.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    if (e) e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <footer className="bg-navy border-t border-gold/10 pt-16 pb-8 px-6">
+    <footer className="bg-navy border-t border-gold/10 pt-16 pb-8 px-6" aria-label="Site Footer">
       <Container className="px-6">
         <div className="grid md:grid-cols-3 gap-12 pb-12 border-b border-slate/10">
           <div>
@@ -31,8 +34,9 @@ const Footer = () => {
               href="#hero"
               onClick={(e) => handleNavClick(e, '#hero')}
               className="flex items-center gap-2 text-slate mb-4"
+              aria-label="Back to Home"
             >
-              <Scale size={22} className="text-gold" />
+              <Scale size={22} className="text-gold" aria-hidden="true" />
               <span className="text-lg font-serif tracking-tight">
                 MD. YOUSUF HOSSAIN
               </span>
@@ -50,61 +54,64 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={social.label}
+                    aria-label={`Visit our ${social.label} page`}
                     className="w-9 h-9 rounded-full border border-slate/15 flex items-center justify-center text-slate/60 hover:text-gold hover:border-gold/40 transition-colors"
                   >
-                    <Icon size={16} />
+                    <Icon size={16} aria-hidden="true" />
                   </a>
                 );
               })}
             </div>
           </div>
 
-          <div>
-            <p className="text-slate text-sm mb-5">Navigation</p>
+          <nav aria-label="Footer Navigation">
+            <p className="text-slate text-sm mb-5 font-medium">Navigation</p>
             <ul className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <button
+                  <a
+                    href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-slate/60 text-sm hover:text-gold transition-colors cursor-pointer"
+                    className="text-slate/60 text-sm hover:text-gold transition-colors inline-block"
                   >
                     {link.label}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          <div>
-            <p className="text-slate text-sm mb-5">Contact</p>
+          <address className="not-italic">
+            <p className="text-slate text-sm mb-5 font-medium">Contact</p>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
+                <MapPin size={16} className="text-gold mt-0.5 shrink-0" aria-hidden="true" />
                 <span className="text-slate/60 text-sm">
                   Chamber No. 12, Bar Council Building, Dhaka
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={16} className="text-gold shrink-0" />
+                <Phone size={16} className="text-gold shrink-0" aria-hidden="true" />
                 <a
                   href="tel:+8801XXXXXXXXX"
                   className="text-slate/60 text-sm hover:text-gold transition-colors"
+                  aria-label="Call +880 1XXX-XXXXXX"
                 >
                   +880 1XXX-XXXXXX
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={16} className="text-gold shrink-0" />
+                <Mail size={16} className="text-gold shrink-0" aria-hidden="true" />
                 <a
                   href="mailto:contact@yusufhossain.com"
                   className="text-slate/60 text-sm hover:text-gold transition-colors"
+                  aria-label="Email contact@yusufhossain.com"
                 >
                   contact@yusufhossain.com
                 </a>
               </li>
             </ul>
-          </div>
+          </address>
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
