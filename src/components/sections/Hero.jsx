@@ -5,9 +5,9 @@ import Image from '../Image';
 import mdYusufImage from '../../assets/md-yusuf.jpg';
 
 const Hero = () => {
-  const handleScrollToContact = (e) => {
+  const handleScrollToSection = (e, targetId) => {
     if (e) e.preventDefault();
-    const element = document.querySelector('#contact');
+    const element = document.querySelector(targetId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -45,7 +45,7 @@ const Hero = () => {
           <div className="flex items-center gap-4">
             <a
               href="#contact"
-              onClick={handleScrollToContact}
+              onClick={(e) => handleScrollToSection(e, '#contact')}
               className="inline-block bg-gold text-navy px-8 py-3 rounded-full text-sm font-medium hover:bg-gold/90 transition-colors cursor-pointer text-center"
               aria-label="Book a consultation with Md. Yusuf Hossain"
             >
@@ -76,13 +76,22 @@ const Hero = () => {
       </Container>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate/40"
-        aria-hidden="true"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ 
+          opacity: { duration: 1, delay: 0.8 },
+          y: { duration: 1.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
+        }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <ArrowDown size={20} />
+        <a 
+          href="#about"
+          onClick={(e) => handleScrollToSection(e, '#about')}
+          className="text-slate/40 hover:text-gold transition-colors p-3 flex items-center justify-center cursor-pointer"
+          aria-label="Scroll down to About section"
+        >
+          <ArrowDown size={24} aria-hidden="true" />
+        </a>
       </motion.div>
     </section>
   );
