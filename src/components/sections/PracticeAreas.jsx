@@ -27,27 +27,27 @@ const practiceAreas = [
 
 const PracticeAreas = () => {
   return (
-    <section id="services" className="bg-navy py-24 px-6">
+    <section id="services" aria-labelledby="services-heading" className="bg-navy py-24 px-6">
       <Container className="px-6">
         <div className="max-w-xl mb-16">
           <p className="text-gold text-sm mb-3">Practice Areas</p>
-          <h2 className="text-3xl md:text-4xl font-serif text-slate">
-            Where I can help
+          <h2 id="services-heading" className="text-3xl md:text-4xl font-serif text-slate">
+            Where clients find support
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ul role="list" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {practiceAreas.map((area, index) => {
             const Icon = area.icon;
             return (
-              <motion.div
+              <motion.li
                 key={area.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -6 }}
-                className="group bg-white/[0.03] border border-slate/10 rounded-xl p-7 transition-colors hover:border-gold/40"
+                className="group bg-white/3 border border-slate/10 rounded-xl p-7 transition-colors hover:border-gold/40"
               >
                 <div className="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
                   <Icon size={20} className="text-gold" />
@@ -58,10 +58,10 @@ const PracticeAreas = () => {
                 <p className="text-sm text-slate/60 leading-relaxed">
                   {area.desc}
                 </p>
-              </motion.div>
+              </motion.li>
             );
           })}
-        </div>
+        </ul>
       </Container>
     </section>
   );
