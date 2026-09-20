@@ -60,13 +60,13 @@ const Contact = () => {
             <div className="flex items-center gap-3">
               <Phone size={18} className="text-gold shrink-0" aria-hidden="true" />
               <a href="tel:+8801XXXXXXXXX" className="text-charcoal/70 text-sm hover:text-gold transition-colors" aria-label="Call +880 1XXX-XXXXXX">
-                +880 1XXX-XXXXXX
+                +880 1977-263182
               </a>
             </div>
             <div className="flex items-center gap-3">
               <Mail size={18} className="text-gold shrink-0" aria-hidden="true" />
               <a href="mailto:contact@yusufhossain.com" className="text-charcoal/70 text-sm hover:text-gold transition-colors" aria-label="Email contact@yusufhossain.com">
-                contact@yusufhossain.com
+                yousufhossainsujan@gmail.com
               </a>
             </div>
           </address>

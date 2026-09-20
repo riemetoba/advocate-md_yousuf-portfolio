@@ -97,7 +97,7 @@ const Footer = () => {
                   className="text-slate/60 text-sm hover:text-gold transition-colors"
                   aria-label="Call +880 1XXX-XXXXXX"
                 >
-                  +880 1XXX-XXXXXX
+                  +880 1977-263182
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -107,7 +107,7 @@ const Footer = () => {
                   className="text-slate/60 text-sm hover:text-gold transition-colors"
                   aria-label="Email contact@yusufhossain.com"
                 >
-                  contact@yusufhossain.com
+                  yousufhossainsujan@gmail.com
                 </a>
               </li>
             </ul>

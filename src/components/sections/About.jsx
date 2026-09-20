@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Scale } from "lucide-react";
 import Container from "../Container";
 import Image from "../Image";
-import mdYusufAbout from "../../assets/md-yusuf-about.jpg";
+import mdYousufAbout from "../../assets/md-yousuf-about.jpg";
 
 const stats = [
-  { value: "2+", label: "Years of Practice" },
-  { value: "50+", label: "Cases Handled" },
+  { value: "1+", label: "Years of Practice" },
+  { value: "10+", label: "Cases Handled" },
   { value: "95%", label: "Client Satisfaction" },
 ];
 
@@ -25,9 +25,9 @@ const About = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="relative"
         >
-          <div className="aspect-[4/5] w-full max-w-sm rounded-2xl overflow-hidden border border-navy/10">
+          <div className="aspect-4/5 w-full max-w-sm rounded-2xl overflow-hidden border border-navy/10">
             <Image
-              imgSrc={mdYusufAbout}
+              imgSrc={mdYousufAbout}
               alt="Advocate Md. Yusuf Hossain at his law office in Bangladesh"
               className="w-full h-full object-cover"
             />

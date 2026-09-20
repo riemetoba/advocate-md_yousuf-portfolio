@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import Container from '../Container';
 import Image from '../Image';
-import mdYusufImage from '../../assets/md-yusuf.jpg';
+import mdYousufImage from '../../assets/md-yousuf.jpg';
 
 const Hero = () => {
   const handleScrollToSection = (e, targetId) => {
@@ -35,11 +35,10 @@ const Hero = () => {
             Legal Consultant, Corporate & Civil Law
           </p>
           <h1 className="text-4xl md:text-6xl font-serif text-slate leading-tight mb-6">
-            Md. Yusuf Hossain
+         Md. Yousuf Hossain
           </h1>
           <p className="text-slate/70 text-base md:text-lg max-w-md mb-10 leading-relaxed">
-            Fifteen years of steady, precise counsel for individuals and
-            businesses navigating complex legal matters.
+           Committed and precise legal counsel, helping individuals and businesses navigate modern legal complexities
           </p>
 
           <div className="flex items-center gap-4">
@@ -60,9 +59,9 @@ const Hero = () => {
           transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
           className="relative flex justify-end w-full"
         >
-          <div className="aspect-[3/4] w-full max-w-md ml-auto rounded-2xl border border-gold/20 bg-navy/40 flex items-center justify-center overflow-hidden">
+          <div className="aspect-3/4 w-full max-w-md ml-auto rounded-2xl border border-gold/20 bg-navy/40 flex items-center justify-center overflow-hidden">
             <Image
-              imgSrc={mdYusufImage}
+              imgSrc={mdYousufImage}
               alt="Advocate Md. Yusuf Hossain"
               className="w-full h-full object-cover"
               fetchPriority="high"
