@@ -93,9 +93,9 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-gold shrink-0" aria-hidden="true" />
                 <a
-                  href="tel:+8801XXXXXXXXX"
+                  href="tel:+8801977263182"
                   className="text-slate/60 text-sm hover:text-gold transition-colors"
-                  aria-label="Call +880 1XXX-XXXXXX"
+                  aria-label="Call +880 1977-263182"
                 >
                   +880 1977-263182
                 </a>
@@ -103,9 +103,9 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-gold shrink-0" aria-hidden="true" />
                 <a
-                  href="mailto:contact@yusufhossain.com"
+                  href="mailto:yousufhossainsujan@gmail.com"
                   className="text-slate/60 text-sm hover:text-gold transition-colors"
-                  aria-label="Email contact@yusufhossain.com"
+                  aria-label="Email yousufhossainsujan@gmail.com"
                 >
                   yousufhossainsujan@gmail.com
                 </a>
