@@ -52,12 +52,6 @@ const Contact = () => {
 
           <address className="flex flex-col gap-5 not-italic">
             <div className="flex items-center gap-3">
-              <MapPin size={18} className="text-gold shrink-0" aria-hidden="true" />
-              <span className="text-charcoal/70 text-sm">
-                Chamber No. 12, Bar Council Building, Dhaka
-              </span>
-            </div>
-            <div className="flex items-center gap-3">
               <Phone size={18} className="text-gold shrink-0" aria-hidden="true" />
               <a href="tel:+8801977263182" className="text-charcoal/70 text-sm hover:text-gold transition-colors" aria-label="Call +880 1977-263182">
                 +880 1977-263182

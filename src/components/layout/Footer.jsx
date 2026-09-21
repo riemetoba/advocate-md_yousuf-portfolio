@@ -1,5 +1,5 @@
 import { Scale, MapPin, Phone, Mail } from 'lucide-react';
-import { FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 import Container from '../Container';
 
 const navLinks = [
@@ -12,8 +12,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: FaFacebook, href: 'https://facebook.com', label: 'Facebook' },
-  { icon: FaLinkedin , href: 'https://linkedin.com', label: 'LinkedIn' },
+  { icon: FaFacebook, href: 'https://www.facebook.com/yousufhossain.sujan.3', label: 'Facebook' }
 ];
 
 const Footer = () => {
@@ -84,12 +83,6 @@ const Footer = () => {
           <address className="not-italic">
             <p className="text-slate text-sm mb-5 font-medium">Contact</p>
             <ul className="flex flex-col gap-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-gold mt-0.5 shrink-0" aria-hidden="true" />
-                <span className="text-slate/60 text-sm">
-                  Chamber No. 12, Bar Council Building, Dhaka
-                </span>
-              </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-gold shrink-0" aria-hidden="true" />
                 <a
@@ -118,7 +111,7 @@ const Footer = () => {
           <p className="text-slate/40 text-xs">
             © {new Date().getFullYear()} Md. Yusuf Hossain. All rights reserved.
           </p>
-          <p className="text-slate/40 text-xs">Advocate, Supreme Court of Bangladesh</p>
+          <p className="text-slate/40 text-xs">Advocate, Judge Court of Bangladesh</p>
         </div>
       </Container>
     </footer>
