@@ -1,4 +1,4 @@
-import { Scale, MapPin, Phone, Mail } from 'lucide-react';
+import { Scale, Phone, Mail } from 'lucide-react';
 import { FaFacebook } from "react-icons/fa";
 import Container from '../Container';
 
