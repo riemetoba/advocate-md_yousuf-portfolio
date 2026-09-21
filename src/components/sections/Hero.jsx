@@ -24,7 +24,7 @@ const Hero = () => {
         aria-hidden="true" 
       />
 
-      <Container className="px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 pt-24 md:pt-0">
+      <Container className="px-6 grid md:grid-cols-[1.4fr_1fr] gap-12 items-center relative z-10 pt-24 md:pt-0">
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,7 +35,7 @@ const Hero = () => {
             Legal Consultant, Corporate & Civil Law
           </p>
           <h1 className="text-4xl md:text-6xl font-serif text-slate leading-tight mb-6">
-         Md. Yousuf Hossain
+        Advocate Md. Yousuf Hossain
           </h1>
           <p className="text-slate/70 text-base md:text-lg max-w-md mb-10 leading-relaxed">
            Committed and precise legal counsel, helping individuals and businesses navigate modern legal complexities

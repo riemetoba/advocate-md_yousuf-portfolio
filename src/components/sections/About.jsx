@@ -1,13 +1,22 @@
 import { motion } from "framer-motion";
-import { Scale } from "lucide-react";
+import { Scale, MapPin } from "lucide-react";
 import Container from "../Container";
 import Image from "../Image";
 import mdYousufAbout from "../../assets/md-yousuf-about.jpg";
 
-const stats = [
-  { value: "1+", label: "Years of Practice" },
-  { value: "10+", label: "Cases Handled" },
-  { value: "95%", label: "Client Satisfaction" },
+const chambers = [
+  {
+    court: "Judge Court Chamber",
+    firm: "Sayed Nazrul Islam & Associates",
+    address:
+      "Room No. 205 (1st Floor), Dhaka Bar Association Building, Kotowali, Dhaka-1100",
+  },
+  {
+    court: "High Court Chamber",
+    firm: "Md. Shafe Ullah & Associates",
+    address:
+      "Room No. 8050 (7th Floor), Huseyn Shaheed Suhrawardy Bhaban, Supreme Court Bar Association, Shahbagh, Dhaka-1000",
+  },
 ];
 
 const About = () => {
@@ -49,30 +58,44 @@ const About = () => {
             id="about-heading"
             className="text-3xl md:text-4xl font-serif text-charcoal mb-6"
           >
-            Counsel built on precision and patience
+            Grounded in diligence and growing expertise
           </h2>
           <p className="text-charcoal/70 leading-relaxed mb-4">
-            I handle civil, criminal, and family law matters with thorough case
-            preparation and a direct, honest approach with every client.
+            I hold an LL.B (Hons) and LL.M, and I am currently working as an
+            assistant to a senior advocate at the Judge Court and another
+            senior advocate at the High Court Division, gaining hands-on
+            exposure to real courtroom practice.
           </p>
           <p className="text-charcoal/70 leading-relaxed mb-10">
-            My practice is built on the belief that good legal counsel listens
-            first, then acts with clarity — I never rush a client toward a
-            decision they don't fully understand.
+            This period of close mentorship under experienced seniors has
+            shaped my approach to the law — one built on careful preparation,
+            attention to detail, and a genuine commitment to every client I
+            will serve.
           </p>
 
-          <dl className="grid grid-cols-3 gap-6 border-t border-navy/10 pt-8">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <dt className="text-2xl md:text-3xl font-serif text-navy mb-1">
-                  {stat.value}
-                </dt>
-                <dd className="text-xs text-charcoal/60 leading-snug">
-                  {stat.label}
-                </dd>
+          <div className="space-y-5 border-t border-navy/10 pt-8">
+            {chambers.map((chamber) => (
+              <div
+                key={chamber.firm}
+                className="rounded-xl border border-navy/10 bg-white/60 p-5"
+              >
+                <p className="text-gold text-xs tracking-wide mb-1">
+                  {chamber.court}
+                </p>
+                <p className="text-charcoal font-serif text-lg mb-2">
+                  {chamber.firm}
+                </p>
+                <div className="flex items-start gap-2 text-charcoal/60 text-sm leading-snug">
+                  <MapPin
+                    size={16}
+                    className="text-navy/50 shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  />
+                  <span>{chamber.address}</span>
+                </div>
               </div>
             ))}
-          </dl>
+          </div>
         </motion.div>
       </Container>
     </section>
