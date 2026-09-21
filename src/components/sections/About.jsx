@@ -24,9 +24,9 @@ const About = () => {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="bg-offwhite py-24 px-6"
+      className="bg-offwhite py-24 px-4"
     >
-      <Container className="px-6 grid md:grid-cols-2 gap-16 items-center">
+      <Container className="px-0 md:px-6 grid md:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}

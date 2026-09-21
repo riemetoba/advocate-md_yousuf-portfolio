@@ -43,13 +43,13 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="bg-navy py-24 px-6">
+    <section id="faq" className="bg-navy py-24 px-4">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
-      <Container className="px-6 max-w-3xl">
+      <Container className="px-0 md:px-6 max-w-3xl">
         <div className="mb-16">
           <p className="text-gold text-sm mb-3">FAQ</p>
           <h2 className="text-3xl md:text-4xl font-serif text-slate">

@@ -27,8 +27,8 @@ const practiceAreas = [
 
 const PracticeAreas = () => {
   return (
-    <section id="services" aria-labelledby="services-heading" className="bg-navy py-24 px-6">
-      <Container className="px-6">
+    <section id="services" aria-labelledby="services-heading" className="bg-navy py-24 px-4">
+      <Container className="px-0 md:px-6">
         <div className="max-w-xl mb-16">
           <p className="text-gold text-sm mb-3">Practice Areas</p>
           <h2 id="services-heading" className="text-3xl md:text-4xl font-serif text-slate">

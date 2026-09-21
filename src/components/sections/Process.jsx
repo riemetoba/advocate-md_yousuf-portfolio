@@ -31,8 +31,8 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" aria-labelledby="process-heading" className="bg-offwhite py-24 px-6">
-      <Container className="px-6">
+    <section id="process" aria-labelledby="process-heading" className="bg-offwhite py-24 px-4">
+      <Container className="px-0 md:px-6">
         <div className="max-w-xl mb-16">
           <p className="text-gold text-sm mb-3">How I Work</p>
           <h2 id="process-heading" className="text-3xl md:text-4xl font-serif text-charcoal">

@@ -33,8 +33,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-offwhite py-24 px-6" aria-labelledby="contact-heading">
-      <Container className="px-6 grid md:grid-cols-2 gap-16">
+    <section id="contact" className="bg-offwhite py-24 px-4 md:px-6" aria-labelledby="contact-heading">
+      <Container className="px-0 md:px-6 grid md:grid-cols-2 gap-10 md:gap-16">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -72,7 +72,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="bg-white border border-navy/10 rounded-2xl p-8 flex flex-col gap-5"
+          className="bg-white border border-navy/10 rounded-2xl p-5 md:p-8 flex flex-col gap-5"
           aria-label="Contact Form"
         >
           <div>

@@ -24,7 +24,7 @@ const Hero = () => {
         aria-hidden="true" 
       />
 
-      <Container className="px-6 grid md:grid-cols-[1.4fr_1fr] gap-12 items-center relative z-10 pt-24 md:pt-0">
+      <Container className="px-4 grid md:grid-cols-[1.4fr_1fr] gap-12 items-center relative z-10 pt-24 md:pt-0">
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}

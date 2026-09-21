@@ -25,8 +25,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-navy border-t border-gold/10 pt-16 pb-8 px-6" aria-label="Site Footer">
-      <Container className="px-6">
+    <footer className="bg-navy border-t border-gold/10 pt-16 pb-8 px-4" aria-label="Site Footer">
+      <Container className="px-0 md:px-6">
         <div className="grid md:grid-cols-3 gap-12 pb-12 border-b border-slate/10">
           <div>
             <a
