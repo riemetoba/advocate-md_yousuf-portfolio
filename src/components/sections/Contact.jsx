@@ -5,9 +5,9 @@ import emailjs from '@emailjs/browser';
 import Container from '../Container';
 import Button from '../Button';
 
-const SERVICE_ID = 'YOUR_SERVICE_ID';
-const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+const SERVICE_ID = 'service_t2uk33p';
+const TEMPLATE_ID = 'template_68vxwpj';
+const PUBLIC_KEY = 'MLtVsu25qe09uX13d';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
