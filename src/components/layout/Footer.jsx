@@ -109,9 +109,9 @@ const Footer = () => {
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate/40 text-xs">
-            © {new Date().getFullYear()} Md. Yusuf Hossain. All rights reserved.
+            © {new Date().getFullYear()} Md. Yousuf Hossain. All rights reserved.
           </p>
-          <p className="text-slate/40 text-xs">Advocate, Judge Court of Bangladesh</p>
+          <p className="text-slate/40 text-xs">Advocate, District and Sessions Judges' Court, Dhaka</p>
         </div>
       </Container>
     </footer>
