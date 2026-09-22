@@ -59,7 +59,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center gap-3">
               <Mail size={18} className="text-gold shrink-0" aria-hidden="true" />
-              <a href="mailto:yousufhossainsujan@gmail.com" className="text-charcoal/70 text-sm hover:text-gold transition-colors" aria-label="Email yousufhossainsujan@gmail.com">
+              <a href="mailto:yousufhossainsujan@gmail.com" target="_blank" rel="noopener noreferrer" className="text-charcoal/70 text-sm hover:text-gold transition-colors" aria-label="Email yousufhossainsujan@gmail.com">
                 yousufhossainsujan@gmail.com
               </a>
             </div>
