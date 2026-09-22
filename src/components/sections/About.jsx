@@ -32,18 +32,19 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative"
         >
-          <div className="aspect-4/5 w-full max-w-sm rounded-2xl overflow-hidden border border-navy/10">
-            <Image
-              imgSrc={mdYousufAbout}
-              alt="Advocate Md. Yusuf Hossain at his law office in Bangladesh"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute -bottom-6 -right-6 bg-navy text-slate rounded-xl px-6 py-4 flex items-center gap-3 shadow-lg">
-            <Scale size={20} className="text-gold" aria-hidden="true" />
-            <span className="text-sm">Bangladesh Bar Council</span>
+          <div className="relative w-full max-w-sm">
+            <div className="aspect-4/5 w-full rounded-2xl overflow-hidden border border-navy/10">
+              <Image
+                imgSrc={mdYousufAbout}
+                alt="Advocate Md. Yusuf Hossain at his law office in Bangladesh"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-6 -right-6 bg-navy text-slate rounded-xl px-6 py-4 flex items-center gap-3 shadow-lg">
+              <Scale size={20} className="text-gold" aria-hidden="true" />
+              <span className="text-sm">Bangladesh Bar Council</span>
+            </div>
           </div>
         </motion.div>
 
@@ -62,15 +63,14 @@ const About = () => {
           </h2>
           <p className="text-charcoal/70 leading-relaxed mb-4">
             I hold an LL.B (Hons) and LL.M, and I am currently working as an
-            assistant to a senior advocate at the Judge Court and another
-            senior advocate at the High Court Division, gaining hands-on
-            exposure to real courtroom practice.
+            assistant to a senior advocate at the Judge Court and another senior
+            advocate at the High Court Division, gaining hands-on exposure to
+            real courtroom practice.
           </p>
           <p className="text-charcoal/70 leading-relaxed mb-10">
-            This period of close mentorship under experienced seniors has
-            shaped my approach to the law — one built on careful preparation,
-            attention to detail, and a genuine commitment to every client I
-            will serve.
+            This period of close mentorship under experienced seniors has shaped
+            my approach to the law — one built on careful preparation, attention
+            to detail, and a genuine commitment to every client I will serve.
           </p>
 
           <div className="space-y-5 border-t border-navy/10 pt-8">
