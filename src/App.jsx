@@ -7,6 +7,7 @@ import PracticeAreas from './components/sections/PracticeAreas'
 import Process from './components/sections/Process'
 import FAQ from './components/sections/FAQ'
 import Contact from './components/sections/Contact'
+import FloatingWhatsApp from './components/sections/FloatingWhatsApp'
 
 
 
@@ -22,7 +23,8 @@ function App() {
            <PracticeAreas />
           <Process />
           <FAQ/>
-          <Contact />  
+          <Contact /> 
+          <FloatingWhatsApp /> 
         </main>
 
         <Footer />
